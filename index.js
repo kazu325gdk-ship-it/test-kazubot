@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Client, GatewayIntentBits, Events } from "discord.js";
 import express from "express";
-import aisatu from "./commands/aisatu.js";
+import aisatu from "./commands/aisatsu.js";
 
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
