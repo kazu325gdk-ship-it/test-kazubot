@@ -3,6 +3,9 @@ import path from "path";
 import { Client, GatewayIntentBits, Events } from "discord.js";
 import express from "express";
 import aisatu from "./commands/aisatsu.js";
+import UpdateCommands from "./update-commands.js";
+
+UpdateCommands();
 
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
@@ -11,6 +14,7 @@ client.login(process.env.TOKEN);
 
 client.on("clientReady", () => {
   console.log(`サーバーが起動しました!!`);
+  console.log(`招待URL:https://discord.com/api/oauth2/authorize?client_id=${process.env.ApplicationID}&permissions=8&scope=applications.commands+bot`)
 });
 var app = express();
 app.get("/", (req, res) => {
